@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tartufo Ristorante · A Date Invitation</title>
+  <meta name="description" content="A little invitation for an date night together.">
+  <meta name="theme-color" content="#f8f5ee">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-glow"></div>
+
+  <!-- Little botanical sprig reused on the folds -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sprig" viewBox="0 0 140 44">
+      <path d="M6 22 Q70 19 134 22" stroke="#7d9876" fill="none" stroke-width="1.2"/>
+      <g fill="#93ab8b">
+        <ellipse cx="22" cy="21" rx="12" ry="3.2" transform="rotate(-16 22 21)"/>
+        <ellipse cx="40" cy="14" rx="13" ry="3.2" transform="rotate(-30 40 14)"/>
+        <ellipse cx="40" cy="28" rx="13" ry="3.2" transform="rotate(28 40 28)"/>
+        <ellipse cx="118" cy="21" rx="12" ry="3.2" transform="rotate(16 118 21)"/>
+        <ellipse cx="100" cy="14" rx="13" ry="3.2" transform="rotate(30 100 14)"/>
+        <ellipse cx="100" cy="28" rx="13" ry="3.2" transform="rotate(-28 100 28)"/>
+        <ellipse cx="58" cy="12" rx="9" ry="2.6" transform="rotate(-40 58 12)"/>
+        <ellipse cx="82" cy="12" rx="9" ry="2.6" transform="rotate(40 82 12)"/>
+      </g>
+      <circle cx="70" cy="21" r="9.5" fill="#eaaab6"/>
+      <circle cx="70" cy="21" r="5.5" fill="#f6d2d9"/>
+      <circle cx="70" cy="21" r="2" fill="#c5a46d"/>
+    </symbol>
+  </svg>
+
+  <main class="page">
+    <div class="top-label">A private invitation</div>
+
+    <div class="envelope-container" id="container">
+
+      <!-- Envelope Frame -->
+      <div class="envelope">
+        <!-- 3D Unfolding Flap -->
+        <div class="envelope-flap" id="flap"></div>
+
+        <!-- Gold Wax Seal -->
+        <div class="seal" id="seal">✳</div>
+
+        <!-- Cover Text -->
+        <div class="cover-info" id="coverInfo">
+          <div class="cover-subtitle">Date Night Saturdayr</div>
+          <h1>Tartufo <em>Ristorante</em></h1>
+          <div class="slide-hint">
+            <span>Slide up to open</span>
+            <span>↑</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pocket: clips the card while it is still tucked inside the envelope -->
+      <div class="pocket" id="pocket">
+
+        <!-- Z-fold card: three panels, each hinged to the bottom edge of the one above -->
+        <div class="panel card" id="card" aria-label="Date itinerary" aria-hidden="true">
+
+          <!-- Fold 1 · heading -->
+          <div class="face front p1">
+            <div class="content center">
+              <svg class="sprig" viewBox="0 0 140 44"><use href="#sprig"/></svg>
+              <div class="overline">The plan</div>
+              <h2>Our Itinerary</h2>
+              <div class="date-line" id="dateText">A DATE TO REMEMBER</div>
+            </div>
+          </div>
+          <div class="face back"></div>
+
+          <!-- Fold 2 · morning + lunch -->
+          <div class="panel" id="panel2">
+            <div class="face front p2">
+              <div class="content schedule">
+                <article class="stop">
+                  <div class="time">10:00</div>
+                  <div>
+                    <div class="stop-type">01 · First stop</div>
+                    <h3>Coffee &amp; a little walk</h3>
+                    <p>A slow morning and somewhere nice to wander together.</p>
+                  </div>
+                </article>
+                <article class="stop">
+                  <div class="time">12:00</div>
+                  <div>
+                    <div class="stop-type">02 · Lunch</div>
+                    <h3>Italian dining</h3>
+                    <p>Good pasta, a lovely quiet table, and lunch together.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="face back"></div>
+
+            <!-- Fold 3 · afternoon + note -->
+            <div class="panel" id="panel3">
+              <div class="face front p3">
+                <div class="content schedule">
+                  <article class="stop">
+                    <div class="time">14:00</div>
+                    <div>
+                      <div class="stop-type">03 · Afterwards</div>
+                      <h3>Unhurried moments</h3>
+                      <p>A little stroll around the area before we call it a day.</p>
+                    </div>
+                  </article>
+                  <div class="bottom-note">
+                    <svg class="sprig sprig--small" viewBox="0 0 140 44"><use href="#sprig"/></svg>
+                    Looking forward to spending time with you.
+                  </div>
+                </div>
+              </div>
+              <div class="face back"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gesture-hint" id="gestureHint" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
